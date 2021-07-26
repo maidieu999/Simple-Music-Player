@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="player">
+        <div class="dashboard" style="background-image: url(asset/music_thumb/soobin_thang_nam.jpg)" data-dashboard-container>
+            <div class="volume">
+                <i class="fas fa-volume-down" data-volume-button></i>
+                <input type="range" name="volume" id="volume" value="0" step="1" min="0" max="10" class="slider" data-volume-input>
+            </div>
+            <header class="header">
+                <h4>Now playing</h4>
+                <h2 data-current-song-title>Tháng Năm</h2>
+            </header>
+            <div class="cd" style="width: 230px;" data-cd-container>
+                <div class="cd__thumb" style="background-image: url(asset/music_thumb/soobin_thang_nam.jpg)" data-cd-img></div>
+            </div>
+            <div class="controll">
+                <div class="adjust">
+                    <div class="btn btn-repeat" data-repeat-button>
+                        <i class="fas fa-redo-alt"></i>
+                    </div>
+                    <div class="btn btn-prev" data-prev-button>
+                        <i class="fas fa-step-backward"></i>
+                    </div>
+                    <div class="btn btn-toggle-play" data-play-pause-button>
+                        <i class='bx bx-play-circle btn-play' data-play-button></i>
+                        <i class='bx bx-pause-circle btn-pause' data-pause-button></i>
+                    </div>
+                    <div class="btn btn-next" data-next-button>
+                        <i class="fas fa-step-forward"></i>
+                    </div>
+                    <div class="btn btn-random" data-random-button>
+                        <i class="fas fa-random"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="progress">
+                <input type="range" name="progress" id="progress" value="0" step="1" min="0" max="100" data-progress>
+            </div>
+            <div class="time">
+                <div class="time__item time-left">
+                    <span data-song-time-play>00:00</span>
+                </div>
+                <div class="time__item time-right">
+                    <span data-current-song-time>06:50</span>
+                </div>
+            </div>
+            <audio id="audio" src="asset/music/thang-nam.mp3" data-audio></audio>
+            
+        </div>
+        <div class="playlist" data-playlist-container>
+            <div class="song">
+                <div class="song__info">
+                    <div class="song__thumb" style="background-image: url('asset/music_thumb/sontung_noi_nay_co_anh.jpg');">
+                    </div>
+                    <div class="song__body">
+                        <h3 class="title">Nơi này có anh</h3>
+                        <p class="author">Sơn Tùng MTP</p>
+                        <p class="time">05:30</p>
+                    </div>
+                </div>
+                <div class="song__play">
+                    <div class="btn btn-toggle-play btn-play">
+                        <i class='bx bx-play-circle'></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="song">
+                <div class="song__info">
+                    <div class="song__thumb" style="background-image: url('asset/music_thumb/noo_yeu_mot_nguoi_sao_buon_den_the.jpg');">
+                    </div>
+                    <div class="song__body">
+                        <h3 class="title">Yêu một người sao buồn đến thế</h3>
+                        <p class="author">Noo Phước Thịnh</p>
+                        <p class="time">05:30</p>
+                    </div>
+                </div>
+                <div class="song__play">
+                    <div class="btn btn-toggle-play btn-play">
+                        <i class='bx bx-play-circle'></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="song active">
+                <div class="song__info">
+                    <div class="song__thumb" style="background-image: url('asset/music_thumb/sontung_noi_nay_co_anh.jpg');">
+                    </div>
+                    <div class="song__body">
+                        <h3 class="title">Nơi này có anh</h3>
+                        <p class="author">Sơn Tùng MTP</p>
+                        <p class="time">05:30</p>
+                    </div>
+                </div>
+                <div class="song__play">
+                    <div class="btn btn-toggle-play btn-play">
+                        <i class='bx bx-play-circle'></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="song_template">
+        <div class="song" data-index = ''>
+            <div class="song__info">
+                <div class="song__thumb" data-song-thumb>
+                </div>
+                <div class="song__body">
+                    <h3 class="title" data-song-title></h3>
+                    <p class="author" data-song-author></p>
+                    <p class="time" data-song-time></p>
+                </div>
+            </div>
+            <div class="song__play">
+                <div class="btn btn-toggle-play btn-play">
+                    <i class='bx bx-play-circle'></i>
+                </div>
+
+            </div>
+        </div>
+
+    </template>
+
+    <script src="main.js"></script>
+</body>
+</html>
