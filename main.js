@@ -1,3 +1,4 @@
+console.log('ok');
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -29,10 +30,10 @@ const LOCAL_STORATE_MUSIC_PLAYER_KEY = 'music.key';
 
 const keyCurrent = JSON.parse(localStorage.getItem(LOCAL_STORATE_MUSIC_PLAYER_KEY))
 
-let currentIndex = keyCurrent.currentIndex || 0;
+let currentIndex = (keyCurrent) ? keyCurrent.currentIndex : 0;
 let isPlaying = false;
-let isReapeat = keyCurrent.isReapeat || false;
-let isRandom = keyCurrent.isRandom || false
+let isReapeat = (keyCurrent) ? keyCurrent.isReapeat : false;
+let isRandom = (keyCurrent) ? keyCurrent.isRandom : false;
 
 const cdThumbAnimate = cdContainer.animate([
     // keyframes
