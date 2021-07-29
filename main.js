@@ -48,7 +48,7 @@ cdThumbAnimate.pause();
 let lists = [
     {
         name: 'Tháng năm',
-        singer: 'Soobin Hoàng Sơn',
+        singer: 'SOOBIN',
         path: './asset/music/thang-nam.mp3',
         image: './asset/music_thumb/soobin_thang_nam.jpg',
         time: '03:01'
@@ -68,6 +68,20 @@ let lists = [
         time: '02:14'
     },
     {
+        name: 'Yêu một người sao buồn đến thế',
+        singer: 'Noo Phước Thịnh',
+        path: './asset/music/yeu-mot-nguoi-sao-buon-den-the.mp3',
+        image: './asset/music_thumb/noo.jpg',
+        time: '04:59'
+    },
+    {
+        name: 'Như mùa tuyết đầu tiên',
+        singer: 'Văn Mai Hương',
+        path: './asset/music/Nhu-Mua-Tuyet-Dau-Mua-I-Will-Go-to-You-Like-the-First-Snow-cover-Van-Mai-Huong.mp3',
+        image: './asset/music_thumb/vanmaihuong_nhu-mua-tuyet-dau-tien.jpg',
+        time: '04:01'
+    },
+    {
         name: 'Em ngày xưa khác rồi',
         singer: 'Hiền Hồ',
         path: './asset/music/em-ngay-xua-khac-roi.mp3',
@@ -80,6 +94,13 @@ let lists = [
         path: './asset/music/ngoc.mp3',
         image: './asset/music_thumb/huongtram_ngoc2.jpg',
         time: '04:52'
+    },
+    {
+        name: 'The Playah',
+        singer: 'SOOBIN',
+        path: './asset/music/theplayah-special-performence.mp3',
+        image: './asset/music_thumb/soobin_the-playah.jpg',
+        time: '07:29'
     },
     {
         name: 'Gặp nhưng không ở lại',
@@ -193,8 +214,9 @@ function loadCurrentSong(currentIndex) {
     audio.src = `${lists[currentIndex].path}`;
     audio.play();
     dashboardContainer.style.backgroundImage = `url('${lists[currentIndex].image}')`;
+    
+    findSongPlay(currentIndex);
     saveToLocalStorage();
-    findSongPlay(currentIndex)
 }
 function formatTime(time) {
     var mins = Math.floor(time / 60);

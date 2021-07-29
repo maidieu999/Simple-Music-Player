@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('asset/reset/reset.css');
 *{margin: 0; padding: 0; box-sizing: border-box;}
+
 :root {
     --hight-light-color: linear-gradient(125deg, #e72c83 0%, #a742c6 100%);
     --hight-light-replace-color: #e72c83;
@@ -48,7 +50,7 @@ header h4 {
     font-weight: 700;
 }
 
-header h2 {font-weight: 500;text-transform: uppercase;}
+header h2 {font-weight: 500;text-transform: uppercase;font-size: 22px;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;line-height: 30px;width: 90%;margin: auto;}
 .cd {
     margin: auto;
     transition: opacity .3s ease-in;
@@ -138,6 +140,7 @@ header h2 {font-weight: 500;text-transform: uppercase;}
     justify-content: space-between;
     font-weight: 100!important;
     margin-top: .2rem;
+    margin-bottom: .8rem;
 }
 .time__item {
     font-style: inherit;
@@ -148,9 +151,6 @@ header h2 {font-weight: 500;text-transform: uppercase;}
 .time-right {
     font-style: inherit;
 }
-
-
-
 .adjust {
     display: flex;
     width: 100%;
@@ -197,12 +197,6 @@ header h2 {font-weight: 500;text-transform: uppercase;}
     -webkit-text-fill-color:transparent;
     
 }
-.fa-play-circle {
-
-}
-.bx-pause-circle {
-
-}
 .btn-play.active{
     display: none;
 }
@@ -219,7 +213,7 @@ header h2 {font-weight: 500;text-transform: uppercase;}
 /* songs */
 .playlist {
     background-color: var(--bg-color);
-    margin-top: 494px;
+    margin-top: 471px;
     padding-top: 1rem;
 }
 .song {
@@ -256,10 +250,10 @@ header h2 {font-weight: 500;text-transform: uppercase;}
     height: 60px;
 }
 .song__body {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
     margin-left: .7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .song__info {
     display: flex;
@@ -267,11 +261,12 @@ header h2 {font-weight: 500;text-transform: uppercase;}
 }
 .song__body .title {
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     color: #fff;
     padding-right: 1rem;
     font-family: var(--font2);
+    margin-bottom: .2rem;
 }
 .song__body .author {
     font-size: 9px;
@@ -281,10 +276,7 @@ header h2 {font-weight: 500;text-transform: uppercase;}
     font-size: 12px;
     opacity: .7;
     font-weight: 300!important;
-}
-.song__play {
-}
-.song__play .btn-play {
+    margin-bottom: 0;
 }
 .song__play .bx-play-circle {
     font-size: 32px;
